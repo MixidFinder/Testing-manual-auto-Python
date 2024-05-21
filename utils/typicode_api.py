@@ -4,6 +4,10 @@ ENDPOINT = "https://jsonplaceholder.typicode.com"
 
 
 class Typicode_api:
+    """
+    A class for working with the API
+    """
+
     headers = {"Content-Type": "application/json; charset=UTF-8"}
 
     @staticmethod

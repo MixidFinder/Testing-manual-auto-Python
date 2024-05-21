@@ -1,4 +1,8 @@
 class Checker:
+    """
+    A class for checking API responses.
+    """
+
     @staticmethod
     def check_status_code(code_response: int, expected_status_code: int):
         assert code_response == expected_status_code
