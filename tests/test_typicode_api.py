@@ -52,6 +52,11 @@ class Test_typicode_api:
         }
         Checker.check_response(result_response_data, self.test_data_without_id)
 
+    def test_post_post_negative(self):
+        wrong_data = 1
+        result_response = Typicode_api.create_new_post(wrong_data)
+        Checker.check_status_code(result_response.status_code, 500)
+
     def test_put_post(self):
         updated_post = {**self.test_data_with_id, "title": "updated title"}
         result_response = Typicode_api.update_post(
@@ -73,6 +78,11 @@ class Test_typicode_api:
         )
         Checker.check_status_code(result_response.status_code, 200)
         Checker.check_response(result_response.json(), patched_post)
+
+    def test_patch_post_negative(self):
+        wrong_data = 1
+        result_response = Typicode_api.patch_post(wrong_data, -1)
+        Checker.check_status_code(result_response.status_code, 500)
 
     def test_delete_post(self):
         result_response = Typicode_api.delete_post(self.test_data_with_id["id"])
