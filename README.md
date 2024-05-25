@@ -20,7 +20,7 @@ python -m venv .venv
 
 Установить зависимости:  
 ```bash
-pip itstall -r requirements.txt
+pip install -r requirements.txt
 ```
 
 # Структура проекта
